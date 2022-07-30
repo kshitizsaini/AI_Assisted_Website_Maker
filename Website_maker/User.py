@@ -42,6 +42,7 @@ class User:
         return self.email
     
     def setUserId(self, globalCount):
+        """global count is a global variable which increases everytime a new user signs up"""
         self.userId = globalCount + 1
         globalCount = globalCount + 1
         """
