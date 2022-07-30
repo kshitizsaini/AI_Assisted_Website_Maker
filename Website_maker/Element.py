@@ -1,13 +1,15 @@
 import re
 class Element(object):
     def __init__(self):
+        # position of the element
         self.x = None
         self.y = None
-        self.orientation = None
+        
+        self.orientation = None # setting rotation        
         self.size = None
         self.elementColor = None
         self.padding = None
-        self.tagList = []
+        self.tagList = [] # tags for searching in the menu
     
     def setX(self, xCoord):
         self.x = xCoord
@@ -31,7 +33,7 @@ class Element(object):
         self.size = size
     
     def setColor(self,color):
-        pattern = "[a-fA-f0-9]{6}"
+        pattern = "[a-fA-f0-9]{6}" # color code in hexadecimal verification
         if re.match(pattern,color):
             color = "#" + color
             self.elementColor = color
