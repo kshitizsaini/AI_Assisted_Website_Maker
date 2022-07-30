@@ -8,7 +8,7 @@ class Webpage:
         self.webpageName = None
         self.webpageDate = datetime.datetime.now()
         self.webElementsList = []
-        self.webpageImage = None
+        self.webpageImage = None  # Storing pixels array
         self.backgroundColor = None
     
     def setWebpageName(self,name):
@@ -30,7 +30,7 @@ class Webpage:
         self.webElementsList.remove(element)
     
     def setBackgroundColor(self,colorhex):
-        pattern = "[a-fA-f0-9]{6}"
+        pattern = "[a-fA-f0-9]{6}" # Check the code for color in hexadecimal
         if re.match(pattern,colorhex):
             color = "#" + colorhex
             self.backgroundColor = color
@@ -54,7 +54,7 @@ class Webpage:
     def uploadImage(self, image):
         """image --- is path to the image... can change depending on if its local or on server but the code should remain the same"""
         im = Image.open(image)
-        data = asarray(image)
+        data = asarray(image) # converting to pixels array
         self.setImage(data)
     
         
