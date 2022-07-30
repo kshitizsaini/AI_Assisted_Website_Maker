@@ -41,11 +41,14 @@ class User:
     def getEmail(self):
         return self.email
     
-    def setUserId(self):
+    def setUserId(self, globalCount):
+        self.userId = globalCount + 1
+        globalCount = globalCount + 1
+        """
         seed(1)
         value = randint(0,1000000)
-        """Need to implement check from database to see if the userId isn't repeating... although the chances are 1 in million"""
         self.userId = int(value)
+        """
     
     def getUserId(self):
         return self.userId
