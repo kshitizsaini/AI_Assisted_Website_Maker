@@ -31,7 +31,7 @@ class User:
         return self.password
     
     def setEmail(self, email):
-        pattern = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
+        pattern = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$" # Email Validation
         if re.match(pattern, email):
             self.email = email
             return 0
